@@ -22,23 +22,32 @@ public class HotelRoomSelectionMain {
         Boolean hasTV = getTvSelection(tvSelection);
         Boolean hasWifi = getWifiSelection(wifiSelection);
 
-        HotelRoom hotelRoom = new HotelRoom(hotelName,numberOfSqFeet,hasTV,hasWifi);
-        DeluxeRoom deluxeRoom;
-        DeluxeSeaViewRoom deluxeACRoom;
-        SuiteRoom suiteRoom;
+        DeluxeRoom deluxeRoom = new DeluxeRoom(hotelName,numberOfSqFeet,hasTV,hasWifi);
+        DeluxeSeaViewRoom deluxeACRoom = new DeluxeSeaViewRoom(hotelName,numberOfSqFeet,hasTV,hasWifi);
+        SuiteRoom suiteRoom = new SuiteRoom(hotelName,numberOfSqFeet,hasTV,hasWifi);
+        Integer costPerSquareFeet,calculateHotelTariff;
 
         if(roomType==1){
-            deluxeRoom = new DeluxeRoom();
-            Integer costPerSquareFeet = deluxeRoom.getRatePerSqFeet();
-            Integer calculateHotelTarrif = deluxeRoom.calculateTariff(hotelRoom.getNumberOfSqFeet(),costPerSquareFeet);
-            System.out.println("Room Tariff per day is:"+calculateHotelTarrif);
+            costPerSquareFeet = deluxeRoom.getRatePerSqFeet();
+            calculateHotelTariff = deluxeRoom.calculateTariff(deluxeRoom.getNumberOfSqFeet(),costPerSquareFeet);
+            System.out.println("Room Tariff per day is:"+ calculateHotelTariff);
+        }else if(roomType==2){
+            costPerSquareFeet = deluxeACRoom.getRatePerSqFeet();
+            calculateHotelTariff = deluxeACRoom.calculateTariff(deluxeACRoom.getNumberOfSqFeet(),costPerSquareFeet);
+            System.out.println("Room Tariff per day is:"+ calculateHotelTariff);
+        }else if(roomType==3){
+            costPerSquareFeet = suiteRoom.getRatePerSqFeet();
+            calculateHotelTariff = suiteRoom.calculateTariff(suiteRoom.getNumberOfSqFeet(),costPerSquareFeet);
+            System.out.println("Room Tariff per day is:"+ calculateHotelTariff);
+        }else{
+            System.out.println("Invalid Room Type");
         }
 
 
     }
 
     public static Boolean getTvSelection(String hasTV){
-        if(hasTV.equals("yes")){
+        if(hasTV.equalsIgnoreCase("yes")){
              return true;
         }else{
             return false;
@@ -47,7 +56,7 @@ public class HotelRoomSelectionMain {
     }
 
     public static Boolean getWifiSelection(String hasWifi){
-        if(hasWifi.equals("yes")){
+        if(hasWifi.equalsIgnoreCase("yes")){
             return true;
         }else{
             return false;

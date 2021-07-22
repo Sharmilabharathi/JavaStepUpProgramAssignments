@@ -14,7 +14,7 @@ public class PrimeSum {
         //Array Instantiation
         int[] primeArray = new int[noOfElements];
 
-        if(noOfElements==0){
+        if(noOfElements<0||noOfElements==0){
             System.out.println("InvalidArraySize");
             System.exit(0);
         }else{

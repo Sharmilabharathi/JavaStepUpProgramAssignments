@@ -12,7 +12,7 @@ public class DeluxeRoom extends HotelRoom{
 
     @Override
     public Integer getRatePerSqFeet(){
-        if(this.getHasWifi()==true){
+        if(this.getHasWifi()){
             return ratePerSqFeet+2;
         }else{
             return ratePerSqFeet;

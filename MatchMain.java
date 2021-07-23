@@ -29,8 +29,7 @@ public class MatchMain {
             match.setTarget(targetScore);
 
             reqRunRate = BigDecimal.valueOf(match.calculateRunRate())
-                    .setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();;
-            System.out.println("reqRunRate:"+reqRunRate);
+                    .setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
             ballsLeft = match.calculateBalls();
             match.display(reqRunRate,ballsLeft);
 
@@ -40,7 +39,8 @@ public class MatchMain {
             match.setCurrentOver(currentOver);
             match.setTarget(targetScore);
 
-            reqRunRate = match.calculateRunRate();
+            reqRunRate = BigDecimal.valueOf(match.calculateRunRate())
+                    .setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
             ballsLeft = match.calculateBalls();
             match.display(reqRunRate,ballsLeft);
         }else if(matchFormat==3){
@@ -49,7 +49,8 @@ public class MatchMain {
             match.setCurrentOver(currentOver);
             match.setTarget(targetScore);
 
-            reqRunRate = match.calculateRunRate();
+            reqRunRate = BigDecimal.valueOf(match.calculateRunRate())
+                    .setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
             ballsLeft = match.calculateBalls();
             match.display(reqRunRate,ballsLeft);
         }else{

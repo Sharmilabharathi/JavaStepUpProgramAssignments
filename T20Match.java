@@ -21,7 +21,7 @@ public class T20Match extends Match{
     @Override
     void display(double reqRunRate, int balls) {
         BigDecimal requiredRuns = BigDecimal.valueOf(((float) this.getTarget())-this.getCurrentScore())
-                .setScale(0, BigDecimal.ROUND_CEILING);
+                .setScale(0, BigDecimal.ROUND_HALF_UP);
         System.out.println("Requirements:\n"+"Need "+requiredRuns+" runs in "+balls+" balls\n"+
                 "Required RunRate:"+reqRunRate);
     }

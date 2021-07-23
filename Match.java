@@ -6,7 +6,6 @@ public abstract class Match {
     private float currentOver;
     private int target;
 
-
     public int getCurrentScore() {
         return currentScore;
     }

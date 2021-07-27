@@ -6,8 +6,8 @@ import java.util.*;
 public class IPLConsistentPlayerMain {
     public static void main(String[] args) throws ClassCastException,NullPointerException {
 
-        Set<String> topScorersIplSeason13 = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
-        Set<String> topScorersIplSeason12 = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
+        List<String> topScorersIplSeason13 = new ArrayList<>();
+        List<String> topScorersIplSeason12 = new ArrayList<>();
         int playersCount;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the top 5 scorers of IPL Season 13");

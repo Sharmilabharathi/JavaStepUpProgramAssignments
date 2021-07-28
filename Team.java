@@ -1,8 +1,8 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author Sharmila
@@ -34,13 +34,13 @@ public class Team {
 
     public void addPlayer(String playerName){
         List<Player> players = new ArrayList<>();
-        Player player = new Player();
-        player.setName(playerName);
+        Player player = new Player(playerName);
         players.add(player);
         this.setPlayersListData(players);
     }
 
     public List<Player> getPlayerList(){
-        return this.getPlayersListData().stream().sorted().collect(Collectors.toList());
+        Collections.sort(this.getPlayersListData());
+        return this.getPlayersListData();
     }
 }

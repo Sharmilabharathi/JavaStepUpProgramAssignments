@@ -3,7 +3,7 @@ package src;
 /**
  * @author Sharmila
  */
-public class Player implements Comparable{
+public class Player implements Comparable<Player>{
     private String name;
 
     public Player(){}
@@ -20,7 +20,7 @@ public class Player implements Comparable{
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Player player) {
+        return this.name.compareTo(player.getName());
     }
 }

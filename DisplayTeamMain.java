@@ -14,7 +14,7 @@ public class DisplayTeamMain {
     public static void main(String[] args){
 
         int playersCount;
-        String teamNameWithPlayers,teamName=null,playerName=null;
+        String teamNameWithPlayers,teamName,playerName;
         List<String> playersListWithTeam=new ArrayList<>();
         MultiValuedMap<String,String> teamWithPlayerMap = new ArrayListValuedHashMap<>();
         Pattern pattern;
@@ -46,22 +46,21 @@ public class DisplayTeamMain {
 
 
         System.out.println("Team and Players in ascending order");
-        for (String teamNameKey:teamWithPlayerMap.keySet())
+        List<String> teamKeylist = new ArrayList<>(teamWithPlayerMap.keySet());
+        List<String> playersNameList;
+        Collections.sort(teamKeylist);
+        for (String teamNameKey:teamKeylist)
         {
-            /*System.out.println("teamNameKey"+teamNameKey+"value"+teamWithPlayerMap.get(teamNameKey));*/
             System.out.println(teamNameKey);
             team.setName(teamNameKey);
-
             if(teamWithPlayerMap.containsKey(teamNameKey)){
-                List<String> playersName=(List<String>) teamWithPlayerMap.get(teamNameKey);
-                for(String players:playersName){
+                playersNameList = (List<String>)teamWithPlayerMap.get(teamNameKey);
+                for(String players:playersNameList){
                     team.addPlayer(players);
                     for(Player playersSameTeam:team.getPlayerList()){
                         System.out.println("--"+playersSameTeam.getName());
                     }
                 }
-
-
 
             }
 

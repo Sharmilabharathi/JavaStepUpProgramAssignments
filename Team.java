@@ -3,6 +3,7 @@ package src;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Sharmila
@@ -40,7 +41,6 @@ public class Team {
     }
 
     public List<Player> getPlayerList(){
-        Collections.sort(this.getPlayersListData());
-        return this.getPlayersListData();
+        return this.getPlayersListData().stream().sorted().collect(Collectors.toList());
     }
 }

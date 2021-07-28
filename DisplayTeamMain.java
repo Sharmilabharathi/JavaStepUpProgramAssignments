@@ -46,15 +46,16 @@ public class DisplayTeamMain {
 
 
         System.out.println("Team and Players in ascending order");
-        List<String> teamKeylist = new ArrayList<>(teamWithPlayerMap.keySet());
+        List<String> teamKeyList = new ArrayList<>(teamWithPlayerMap.keySet());
         List<String> playersNameList;
-        Collections.sort(teamKeylist);
-        for (String teamNameKey:teamKeylist)
+        Collections.sort(teamKeyList);
+        for (String teamNameKey:teamKeyList)
         {
             System.out.println(teamNameKey);
             team.setName(teamNameKey);
             if(teamWithPlayerMap.containsKey(teamNameKey)){
                 playersNameList = (List<String>)teamWithPlayerMap.get(teamNameKey);
+                Collections.sort(playersNameList);
                 for(String players:playersNameList){
                     team.addPlayer(players);
                     for(Player playersSameTeam:team.getPlayerList()){
@@ -63,8 +64,8 @@ public class DisplayTeamMain {
                 }
 
             }
-
         }
+
 
 
     }

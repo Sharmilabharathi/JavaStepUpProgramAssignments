@@ -1,3 +1,6 @@
+package src;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,12 +33,14 @@ public class Team {
     }
 
     public void addPlayer(String playerName){
+        List<Player> players = new ArrayList<>();
         Player player = new Player();
         player.setName(playerName);
+        players.add(player);
+        this.setPlayersListData(players);
     }
 
     public List<Player> getPlayerList(){
-        List<Player> sortedPlayersList=  playersListData.stream().sorted().collect(Collectors.toList());
-        return sortedPlayersList;
+        return this.getPlayersListData().stream().sorted().collect(Collectors.toList());
     }
 }

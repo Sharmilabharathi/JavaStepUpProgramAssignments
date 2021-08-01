@@ -19,16 +19,16 @@
 <h1>Employee Registration</h1>
 <hr>
 
-<div class="form">
-    <form action="success" method="post" ><%--onsubmit="return validate()"--%>
-        <table>
+<div class="form" align="center">
+    <form action="${pageContext.request.contextPath}/success" method="post" ><%--onsubmit="return validate()"--%>
+        <table border="0" cellpadding="10">
             <tr>
                 <td>Employee ID:</td>
-                <td><input id="id" name="empId"></td>
+                <td><input id="id" name="empId" required></td>
             </tr>
             <tr>
                 <td>Employee name</td>
-                <td><input id="name" name="empName"></td>
+                <td><input id="name" name="empName" required></td>
             </tr>
             <tr>
                 <td>Employee age</td>

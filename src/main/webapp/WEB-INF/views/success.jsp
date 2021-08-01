@@ -14,8 +14,10 @@
     <title>Success Page</title>
 </head>
 <body>
-
+<div>
 <h2> ${empName} has been  registered successfully</h2>
+<a href="${pageContext.request.contextPath}/">home</a>
+</div>
 
 </body>
 </html>

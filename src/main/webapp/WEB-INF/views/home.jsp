@@ -12,7 +12,11 @@
 </head>
 <body>
 <div class="tab">
-    <a href="/login">Login</a>
+    <table>
+        <tr>
+            <td><a href="${pageContext.request.contextPath}/login">Login</a></td>
+        </tr>
+    </table>
 </div>
 
 <div id="wrapper">

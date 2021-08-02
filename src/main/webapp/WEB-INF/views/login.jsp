@@ -5,7 +5,7 @@
   Time: 12:40
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -13,12 +13,11 @@
 </head>
 <body>
 <div  class="form" align="center">
-
     <form action="${pageContext.request.contextPath}/display">
         <table border="0" cellpadding="10">
             <tr>
                 <td>Employee ID:</td>
-                <td><input id="id" name="empId"></td>
+                <td><input type="text" id="id" name="empId"></td>
             </tr>
             <tr>
                 <td>Employee Password:</td>

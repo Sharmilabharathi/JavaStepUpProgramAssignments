@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RestController
 public class EmployeeController {
@@ -44,8 +42,9 @@ public class EmployeeController {
     @RequestMapping (value="/display", method = RequestMethod.GET)
     public ModelAndView getEmployeeDetails(@RequestParam int empId){
         ModelAndView modelAndView = new ModelAndView("display");
-        Employee employee = employeeService.getEmployeeDetails(empId).get();
+        Employee employee = employeeService.getEmployeeDetails(empId);
         List<Employee> employeeList = employeeService.getAllEmployeeDetails();
+
         modelAndView.addObject("employeeList",employeeList);
         modelAndView.addObject("employeeData",employee);
         return modelAndView;
@@ -54,15 +53,14 @@ public class EmployeeController {
     @RequestMapping(value = "/edit/{id}")
     public ModelAndView updateEmployeeDetails(@PathVariable int id) {
         ModelAndView modelAndView = new ModelAndView("edit");
-        Employee employee=employeeService.getEmployeeDetails(id).get();
+        Employee employee=employeeService.getEmployeeDetails(id);
         modelAndView.addObject("employee",employee);
         return modelAndView;
     }
 
     @RequestMapping (value="/delete/{id}", method = RequestMethod.GET)
-    public String getAllEmployeeDetails(@PathVariable int id){
-        ModelAndView modelAndView = new ModelAndView();
+    public ModelAndView getAllEmployeeDetails(@PathVariable int id){
         employeeService.deleteEmployee(id);
-        return  "The employee with "+id+" has been successfully deleted";
+        return  new ModelAndView("deleteSuccess");
     }
 }

@@ -7,7 +7,3 @@ function validate() {
         return false;
     }
 }
-
-function detailsDisplay(){
-
-}

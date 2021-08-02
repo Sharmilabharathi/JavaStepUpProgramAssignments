@@ -14,7 +14,7 @@
 <body>
 <div  class="form" align="center">
 
-    <form action="${pageContext.request.contextPath}/display" method="get">
+    <form action="${pageContext.request.contextPath}/display">
         <table border="0" cellpadding="10">
             <tr>
                 <td>Employee ID:</td>

@@ -15,7 +15,7 @@
 </head>
 <body>
 <div>
-<h2> ${empName} has been  registered successfully</h2>
+<h2> ${empName} has been  registered/updated successfully</h2>
 <a href="${pageContext.request.contextPath}/">home</a>
 </div>
 

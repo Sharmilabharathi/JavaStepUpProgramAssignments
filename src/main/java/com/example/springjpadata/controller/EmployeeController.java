@@ -7,7 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 public class EmployeeController {
@@ -42,7 +44,9 @@ public class EmployeeController {
     @RequestMapping (value="/display", method = RequestMethod.GET)
     public ModelAndView getEmployeeDetails(@RequestParam int empId){
         ModelAndView modelAndView = new ModelAndView("display");
-        Optional<Employee> employee = employeeService.getEmployeeDetails(empId);
+        Employee employee = employeeService.getEmployeeDetails(empId).get();
+        List<Employee> employeeList = employeeService.getAllEmployeeDetails();
+        modelAndView.addObject("employeeList",employeeList);
         modelAndView.addObject("employeeData",employee);
         return modelAndView;
     }
@@ -53,5 +57,12 @@ public class EmployeeController {
         Employee employee=employeeService.getEmployeeDetails(id).get();
         modelAndView.addObject("employee",employee);
         return modelAndView;
+    }
+
+    @RequestMapping (value="/delete/{id}", method = RequestMethod.GET)
+    public String getAllEmployeeDetails(@PathVariable int id){
+        ModelAndView modelAndView = new ModelAndView();
+        employeeService.deleteEmployee(id);
+        return  "The employee with "+id+" has been successfully deleted";
     }
 }

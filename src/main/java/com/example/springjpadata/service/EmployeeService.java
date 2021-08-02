@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -22,5 +23,13 @@ public class EmployeeService {
 
     public Optional<Employee> getEmployeeDetails(Integer id){
         return employeeRepository.findById(id);
+    }
+
+    public List<Employee> getAllEmployeeDetails(){
+        return (List<Employee>) employeeRepository.findAll();
+    }
+
+    public void deleteEmployee(Integer id){
+         employeeRepository.deleteById(id);
     }
 }

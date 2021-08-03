@@ -12,8 +12,10 @@
     <title>Employee Login Page</title>
 </head>
 <body>
+<h1 style="text-align: center">Employee Login</h1>
+<hr>
 <div  class="form" align="center">
-    <form action="${pageContext.request.contextPath}/display">
+    <form action="${pageContext.request.contextPath}/display" autocomplete="off">
         <table border="0" cellpadding="10">
             <tr>
                 <td>Employee ID:</td>

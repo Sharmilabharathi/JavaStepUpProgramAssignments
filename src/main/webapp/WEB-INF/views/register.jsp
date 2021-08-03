@@ -12,11 +12,10 @@
     <title>Employee Registration Page</title>
 </head>
 <body>
-<h1>Employee Registration</h1>
+<h1 style="text-align: center">Employee Registration</h1>
 <hr>
-
 <div class="form" align="center">
-    <form action="${pageContext.request.contextPath}/success" method="post" >
+    <form action="${pageContext.request.contextPath}/success" method="post" autocomplete="off">
         <table border="0" cellpadding="10">
             <tr>
                 <td>Employee ID:</td>

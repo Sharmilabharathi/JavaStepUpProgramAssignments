@@ -11,7 +11,7 @@
     <groupId>com.example</groupId>
     <artifactId>springjpadata</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <!--<name>springjpadata</name>-->
+    <name>springjpadata</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
@@ -73,7 +73,7 @@
         </dependency>
     </dependencies>
 
-    <!--<build>
+   <!-- <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

@@ -3,13 +3,14 @@ package com.example.springjpadata.controller;
 import com.example.springjpadata.entity.Employee;
 import com.example.springjpadata.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class EmployeeController {
 
     @Autowired
